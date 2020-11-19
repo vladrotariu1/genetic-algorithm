@@ -36,9 +36,9 @@ int DNA::get_dimension()
 	return this->gene_dimension;
 }
 
-void DNA::mutate()
+void DNA::mutate(int position)
 {
-	int position = random_generator.rand_int(this->gene_dimension);
+	//int position = random_generator.rand_int(this->gene_dimension);
 	if (this->random_generator.rand_uniform() <= this->mutation_probability) {
 		if (gene.at(position) == '0') {
 			gene[position] = '1';

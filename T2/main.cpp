@@ -4,18 +4,18 @@
 
 int main() {
 	srand(time(NULL));
-	int dimension = 5;
-	float C = 0;
+	int dimension = 30;
+	float C = dimension * 419;
 
-	Population P = Population(200, 0.02, de_jong, dimension, -5.12, 5.12, 3);
-	P.calc_fitness(C);
-	
-	for (int i = 0; i < 2000; i++) {
+	Population P = Population(1000, 0.02, schwefel, dimension, -500, 500, 3, C);
+	P.calc_fitness();
+
+	for (int i = 0; i < 200; i++) {
 		DNA top_candidate = P.get_top_candidate();
 		cout << i << ' ' << P.get_function_value(top_candidate.get_gene()) << '\n';
 		P.natural_selection();
 		P.generate();
-		P.calc_fitness(C);
+		P.calc_fitness();
 	}
 
 	DNA top_candidate = P.get_top_candidate();

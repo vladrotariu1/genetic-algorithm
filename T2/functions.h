@@ -23,3 +23,12 @@ float rastrigin(vector<float> parameters, int dimension) {
 
 	return result;
 }
+
+float schwefel(vector<float> parameters, int dimension) {
+	float result = 0;
+	for (int i = 0; i < dimension; i++) {
+		result += -1 * (parameters[i] * sin(sqrt(abs(parameters[i]))));
+	}
+
+	return result;
+}

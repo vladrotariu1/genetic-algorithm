@@ -18,6 +18,6 @@ public:
 	string generate_gene();
 	string get_gene();
 	int get_dimension();
-	void mutate();
+	void mutate(int position);
 };
 
